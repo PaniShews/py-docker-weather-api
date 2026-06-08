@@ -5,7 +5,9 @@ import requests
 def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     if not api_key:
-        raise EnvironmentError("API_KEY environment variable is not set.")
+        raise EnvironmentError(
+            "API_KEY environment variable is not set."
+        )
 
     url = "http://api.weatherapi.com/v1/current.json"
     params = {
@@ -24,7 +26,8 @@ def get_weather() -> None:
 
     print(f"Weather in {location['name']}, {location['country']}:")
     print(
-        f"  Temperature : {current['temp_c']}°C (feels like {current['feelslike_c']}°C)"
+        f"  Temperature : {current['temp_c']}°C"
+        f" (feels like {current['feelslike_c']}°C)"
     )
     print(f"  Condition   : {current['condition']['text']}")
     print(f"  Humidity    : {current['humidity']}%")
