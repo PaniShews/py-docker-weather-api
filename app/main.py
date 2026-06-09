@@ -25,7 +25,8 @@ def get_weather() -> None:
     current = data["current"]
 
     print(f"Weather in {location['name']}, {location['country']}:")
-    print(f"  Temperature : {current['temp_c']}°C (feels like {current['feelslike_c']}°C)")
+    print(f"  Temperature : {current['temp_c']}°C"
+          f" (feels like {current['feelslike_c']}°C)")
     print(f"  Condition   : {current['condition']['text']}")
     print(f"  Humidity    : {current['humidity']}%")
     print(f"  Wind        : {current['wind_kph']} kph {current['wind_dir']}")
